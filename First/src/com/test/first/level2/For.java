@@ -1,4 +1,4 @@
-package com.test.first.repeat;
+package com.test.first.level2;
 
 //for 문 문법 for(초기화값;조건식;증감식)
 public class For {

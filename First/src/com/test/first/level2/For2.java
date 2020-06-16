@@ -1,4 +1,4 @@
-package com.test.first.repeat;
+package com.test.first.level2;
 
 public class For2 {
 	public static void main(String[] args) {
