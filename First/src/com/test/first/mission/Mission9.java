@@ -18,14 +18,14 @@ public class Mission9 {
 			sum += arr[z];
 		}
 		System.out.printf("합계 = %d\n", sum);
-		for (int q = 0; q < arr.length; q++) {
+		for (int q = 0; q < arr.length; q++) { //1번방법
 			System.out.print(arr[q]);
 			if (q + 1 < arr.length) { // q+1이 배열 길이보다 커지면  "," 출력 X
 				System.out.print(", ");
 			}
 		}
 		System.out.println();
-		for(int y = 0 ; y < arr.length; y++) {
+		for(int y = 0 ; y < arr.length; y++) { //2번방법 , 제일 간단
 			if(y != 0) {
 				System.out.print(", "); //y가 0이면 ","출력 X // 나머지는 ","출력
 			}

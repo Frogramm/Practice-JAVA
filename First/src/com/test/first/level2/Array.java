@@ -22,7 +22,7 @@ public class Array {
 		//나중에는 메소드로 만들고 메소드를 호출하는 방식으로 진행되는데, 확장성이 줄어들기때문에, 초기화 및 출력 문은 따로 쓰는게 좋다.
 		
 		
-		int[] arr7 = new int[100];
+		int[] arr7 = new int[100]; 
 		for(int i = 0; i<arr7.length ; i++) { //arr7.length << 배열안에 들어있는 크기만큼 출력된다. 현재문장에서는 100
 			arr7[i] = 5; //arr7[0]~arr7[99] 까지 값에 5로 초기화
 		}
