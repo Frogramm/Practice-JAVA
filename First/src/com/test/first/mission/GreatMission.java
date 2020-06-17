@@ -10,29 +10,29 @@ public class GreatMission {
 		// 자리가 맞고 숫자도 맞으면 S
 		// 숫자가 맞고 자리가 틀리면 B
 		// 숫자도틀리고 자리도 틀리면 O
-		int countO = 0;
+		int countO = 0; // O B S 체크할 숫자 선언 및 초기화
 		int countB = 0;
 		int countS = 0;
-		final int ran = 3;
-		int[] rArr = new int[ran];
-		int[] myArr = new int[ran];
+		final int ran = 4;
+		int[] rArr = new int[ran];   //랜덤한값 들어갈 배열 선언
+		int[] myArr = new int[ran];  //내가 입력할값 배열 선언
 		Scanner scan = new Scanner(System.in);
 		for (int i = 0; i < rArr.length; i++) { //랜덤값 호출
 			rArr[i] = (int) (Math.random() * 9 + 1); // 1~9값 rArr[i]에 입력
 			for (int z = 0; z < i; z++) {
-				if (rArr[z] == rArr[i]) {
+				if (rArr[z] == rArr[i]) { // 중복되면 재출력
 					i--;
 					break;
 				}
+				System.out.printf("arr[%d] i값 : %d, arr[%d] z값 : %d\n", i ,rArr[i], z, rArr[z]);
 			}
 		}
-		System.out.printf("값1 : %d | 값2 : %d | 값3 : %d\n", rArr[0], rArr[1], rArr[2]);
-		
 		while (true) {
 			//내값 입력
 			for (int x = 0; x < myArr.length; x++) {
 				System.out.printf("값%d : ", x + 1);
 				myArr[x] = scan.nextInt();
+				//내값입력
 			}
 			countS = 0;
 			countB = 0;
@@ -48,9 +48,7 @@ public class GreatMission {
 					}
 				}
 			}
-			if(countS+countB<=ran) {
 				countO = (ran-countS-countB);
-			}
 			if (countS == ran) {
 				break;
 			}
