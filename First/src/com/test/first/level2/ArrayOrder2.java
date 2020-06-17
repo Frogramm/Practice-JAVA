@@ -5,12 +5,13 @@ public class ArrayOrder2 {
 		// 선택정렬
 		int[] arr = { 29, 33, 15, 88, 5, 46, 92, 1, 19 };
 		int min; // 최소값 찾기위한값
-		for (int i = 0; i < arr.length - 1; i++) {
+		for (int i = 0; i < arr.length - 1; i++) { 
+			//인덱스 값이 0~8까지이고 종류 9개 서로 비교를하면 8번 반복 , 때문에 배열길이-1번 만큼만 for문을 반복하면된다
 			min = i; //i번째 부터 시작해야 하니까 i
 			for (int z = i + 1; z < arr.length; z++) {
 				if (arr[min] > arr[z]) { //arr[min]랑 arr[z]랑 비교해서, 
 					min = z; // 만약 arr[min]값이 arr[z]보다 크면
-					// 최소값은 z주소로 변경
+					// 최소값은 z 인덱스 주소로 변경
 				}
 			}
 			if (min != i) { //최소값 주소와, i주소가 같지 않다면, i와 min값 교체

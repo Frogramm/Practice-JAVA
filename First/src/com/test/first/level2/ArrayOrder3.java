@@ -10,6 +10,7 @@ public class ArrayOrder3 {
 		int gaep;
 		for (int i = 1; i < arr.length - 1; i++) {
 			for (int z = 0; z < ((arr.length) - i); z++) {
+				//arr.length = 배열의 길이
 				//int i 값에 1을쓰는이유 
 				//계산을하면 최후에 남는 값은 자동으로 최소값이 되어서 0번 주소의 값은
 				//자동으로 할당되게 되어있어서 굳이 0값을 비교할 필요가 없음.

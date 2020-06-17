@@ -7,7 +7,9 @@ public class ArrayOrder {
 		//순차 정렬
 		for(int i = 0 ;i < arr.length-1;i++) { 
 			for(int z = i+1 ; z < arr.length; z++) {
-				if(arr[i] > arr[z]) {//i배열주소의 값과, i+1배열주소의 값을 비교
+				if(arr[i] > arr[z]) {
+					//i값 + 1 하는 이유는 i인덱스에있는 주소 값과 바로 옆에있는 주소값을 비교 해야되기 때문
+					//i배열주소의 값과, i+1배열주소의 값을 비교
 					//비교했을때 i배열 주소의 값이 더크면, 
 					//z배열 주소의 값을 i주소의 값으로 교체
 					int paste = arr[i];
