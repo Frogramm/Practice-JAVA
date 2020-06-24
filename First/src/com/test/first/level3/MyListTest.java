@@ -20,11 +20,46 @@ public class MyListTest {
 		val = list.get(0); //10
 		System.out.println(lan);
 		System.out.println(val);
-		list.remove(0);
-		
+		list.add(1,100); //10 15 20 => 10, 100, 15, 20
+		int delval = list.remove(); //마지막값 지우고, 지우는값을 리턴
+		System.out.println(delval);
+		int delVal = list.remove(3); // ()괄호안의 숫자는 n번자 인덱스
+		System.out.println(delVal);
+		MyArrays.print(list); //[10,1200,15] 프린트 되도록
+		String str = MyArrays.toString(list);
+		System.out.println();
+		System.out.println(str);
+		//문자열을 리턴하도록 Arrays.toString메소드 사용금지
 	}
 }
 
+class MyArrays{
+	
+	public static String toString(MyList list){
+		String str ="";
+		for(int i = 0 ; i < list.size(); i++) {
+			if(i > 0) { str += ", "; }
+			str += list.get(i);
+		}
+		//return "[" + str + "]";
+		return String.format("[%s]", str);
+		}
+	
+	static void print(MyList list) {
+		System.out.printf("[");
+		for(int i = 0 ; i < list.size() ; i++) {
+			System.out.print(i == list.size()-1 ? list.get(i) + "]" : list.get(i) + ", ");
+			
+//			if(i == list.size()-1) {
+//				System.out.printf("%d]", list.get(i));
+//			}
+//			else {
+//			System.out.printf("%d,", list.get(i));
+//			}
+		}
+//		System.out.println(Arrays.toString(list.getArr()));
+	}
+}
 
 class MyList{
 	
@@ -34,8 +69,26 @@ class MyList{
 		init();
 	}
 	
+	int[] getArr(){
+		return arr;
+	}
+	
 	private void init() {
 		arr = new int[0];
+	}
+	void add(int a, int b) {
+		int[] temp = new int[arr.length+1];
+		for(int i = 0 ; i < arr.length ; i++) {
+			if(i < a){ //a보다 i가 작을때는 그냥 복사
+				temp[i] = arr[i];
+			}
+			else { //그게아니라고하면 temp+1 인덱스 값에 arr[i]값 복사
+				temp[i+1] = arr[i];
+			}
+		}
+		temp[a] = b; //temp[a]자리에 b값 입력
+		arr = temp;
+		System.out.println(Arrays.toString(arr));
 	}
 	
 	void add(int a) {
@@ -53,17 +106,24 @@ class MyList{
 	int get(int a) {
 		return arr[a];
 	}
-	void remove(){
-		int [] temp = new int [arr.length-1];
-		for(int i = 0; i < temp.length ; i++) {
-			temp[i] = arr[i];
-		}
-		arr = temp;
-		System.out.println(Arrays.toString(arr));
+	int remove(){
+		return remove(arr.length-1);
 	}
-	void remove(int a) {
+//	void remove(int a) {
+//		int[] temp = new int[arr.length-1];
+//		for(int i = 0; i < temp.length ; i++) {
+//			if(i < a) {
+//				temp[i] = arr[i];
+//			}
+//			else {
+//				temp[i] = arr[i+1];
+//			}
+//		}
+//		arr = temp;
+//		System.out.println(Arrays.toString(arr));
+	int remove(int a) {
 		int[] temp = new int[arr.length-1];
-		for(int i = 0; i < temp.length ; i++) {
+		for(int i = 0 ; i < temp.length ; i++) {
 			if(i < a) {
 				temp[i] = arr[i];
 			}
@@ -71,8 +131,9 @@ class MyList{
 				temp[i] = arr[i+1];
 			}
 		}
+		int delVal = arr[a];
 		arr = temp;
-		System.out.println(Arrays.toString(arr));
-
+		return delVal;
 	}
+
 }
