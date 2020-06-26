@@ -5,6 +5,11 @@ public class Game {
 	//Game 메인 메서드
 	public static void main(String[] args) {
 		int gameCnt = 3;
+		if(args.length != 0) {
+			try {
+				gameCnt = Integer.parseInt(args[0]);
+			}catch(Exception e) {}
+		}
 		Baseball ball = new Baseball(gameCnt);
 //		int val = ball.get(0); //0번째 인덱스값 리턴
 		MyBall myBall = new MyBall(gameCnt);

@@ -5,9 +5,7 @@ public class Checker {
 	//성공하면 false, 성공전이면 true
 	
 	public static boolean check(int gameCnt, Baseball b, MyBall mb) {
-		int countS = 0;
-		int countB = 0;
-		int countO = 0;
+		int countS = 0, countB = 0, countO = 0;
 		for (int q = 0; q < gameCnt; q++) {
 			for (int e = 0; e < gameCnt; e++) {
 				if (mb.get(q) == b.get(e)) {
@@ -21,8 +19,6 @@ public class Checker {
 		}
 			countO = (gameCnt-countS-countB);
 			System.out.printf("S : %d / B : %d / O : %d\n", countS, countB, countO);
-		if (countS == gameCnt) {
-			return false;
-		}return true;
+			return countS != gameCnt;
 	}
 }
