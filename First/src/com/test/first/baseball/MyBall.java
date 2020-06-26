@@ -12,7 +12,6 @@ public class MyBall {
 
 	public MyBall(int g) {
 		init(g);
-		setNumbers();
 	}
 
 	public void setNumbers() {
@@ -27,13 +26,11 @@ public class MyBall {
 				//에러가 터지지 않았다면, String val int화 시켜서 mArr[i]에 값 대입
 				mArr[i] = Integer.parseInt(val); //문자형을 정수형으로 바꿔주는 메소드
 			}catch(Exception e) { //에러가 터졌다면,mArr[i] 값을 0으로 변환
-				mArr[i] = 0;
+					i--;
+					System.out.println("숫자만 입력하세요.");
+					continue;
 			}
-			if(mArr[i] == 0) { //1빼고 
-				i--;
-				System.out.println("숫자만 입력하세요.");
-				continue;
-			}
+			
 			if (min > mArr[i] || mArr[i] > max) {
 				i--;
 				System.out.println("범위 밖의 숫자를 입력하셨습니다. 재입력 바랍니다.");
