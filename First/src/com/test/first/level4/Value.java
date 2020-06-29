@@ -1,6 +1,6 @@
 package com.test.first.level4;
 
-public class Value {
+public class Value{
 	
 		private int val;
 		
@@ -12,6 +12,10 @@ public class Value {
 		}
 		@Override
 		public boolean equals(Object obj) {
-			return false;
+			Value objValue = (Value)obj;
+			if(this.val == objValue.getVal()) {
+				return true;
+			}
+			else return false;
 		}
 	}
