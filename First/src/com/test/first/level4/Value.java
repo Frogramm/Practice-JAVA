@@ -18,4 +18,8 @@ public class Value{
 			}
 			else return false;
 		}
+		@Override
+		public String toString() {
+			return String.valueOf(this.val); //valueOf -> String으로 return 해줌.
+		}
 	}
