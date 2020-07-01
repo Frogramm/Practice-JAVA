@@ -15,6 +15,11 @@ public class Unit {
 	public int getCurrent_hp() {
 		return current_hp;
 	}
+	
+	public void setCrrent_hp(int hp) {
+		this.current_hp = hp;
+	}
+	
 	public void move(int x, int y) {
 		System.out.printf("x : %d, y : %d 좌표로 이동\n", x, y);
 	}
